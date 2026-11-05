@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login — MemberGate</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <span class="brand-logo">MG</span>
+      <span class="brand-name">MemberGate</span>
+    </a>
+    <nav class="top-actions" aria-label="Top">
+      <a href="index.html">Home</a>
+      <a href="login.html">Login</a>
+      <a class="btn-primary" href="login.html">Join</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <div class="card">
+      <h2>Member login</h2>
+      <p class="sub">Name, email, and password. Robot honeypot + trim + rate limit are on.</p>
+
+      <form id="login-form" autocomplete="on" novalidate>
+        <!-- honeypot — leave empty (robots fill it) -->
+        <div class="hp-wrap" aria-hidden="true">
+          <label>Website</label>
+          <input class="hp-field" type="text" name="website" tabindex="-1" autocomplete="off" />
+        </div>
+
+        <div class="field">
+          <label for="name">First name</label>
+          <input id="name" name="name" type="text" placeholder="Your name" required minlength="2" maxlength="64" />
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required maxlength="120" />
+        </div>
+
+        <div class="field">
+          <label for="password">Email password</label>
+          <input id="password" name="password" type="password" placeholder="••••••••" required minlength="6" maxlength="128" />
+        </div>
+
+        <button class="btn" type="submit">Log in</button>
+        <div id="login-msg" class="msg" role="status"></div>
+      </form>
+    </div>
+
+    <p class="footer-note">
+      Not a real subscription backend — demo session only. Protect layer still applies.
+    </p>
+  </main>
+
+  <script src="js/protect.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Main — MemberGate</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="main.html">
+      <span class="brand-logo">MG</span>
+      <span class="brand-name">MemberGate</span>
+    </a>
+    <nav class="top-actions" aria-label="Top">
+      <a href="main.html">Main</a>
+      <a href="#" data-logout>Logout</a>
+      <a class="btn-primary" href="#" data-logout>Exit</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="main-hero">
+      <div class="main-logo">MG</div>
+      <h1 class="main-title">MemberGate</h1>
+      <p class="main-desc">
+        You cleared the first-page gate. Session is active for
+        <strong id="member-name">Member</strong>
+        (<span id="member-email" style="color:var(--muted);font-size:13px;"></span>).
+        This surface is the post-login main: logo, name, description, and the link you choose next.
+      </p>
+      <a class="main-link" href="https://example.com" target="_blank" rel="noopener">
+        Open your target link →
+      </a>
+    </section>
+
+    <div class="grid-3">
+      <div class="tile">
+        <h3>Gate</h3>
+        <p>First page checks membership. Missing session → bounce to login.</p>
+      </div>
+      <div class="tile">
+        <h3>Protect</h3>
+        <p>Trim, honeypot, rate limit, soft session expiry. Client demo layer.</p>
+      </div>
+      <div class="tile">
+        <h3>API shape</h3>
+        <p>ProtectAPI.loginAttempt / getSession / requireMember — swap for real backend later.</p>
+      </div>
+    </div>
+
+    <p class="footer-note">
+      Main unlocked · oval bar · three actions right · logo left
+    </p>
+  </main>
+
+  <script src="js/protect.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

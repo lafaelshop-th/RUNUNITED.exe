@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gate — Member Check</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- oval top bar: logo left, three actions right -->
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <span class="brand-logo">MG</span>
+      <span class="brand-name">MemberGate</span>
+    </a>
+    <nav class="top-actions" aria-label="Top">
+      <a href="index.html">Home</a>
+      <a href="login.html">Login</a>
+      <a class="btn-primary" href="login.html">Join</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="hero">
+      <div class="gate-status">
+        <span class="dot" id="gate-dot"></span>
+        <span id="gate-status-text">Checking membership…</span>
+      </div>
+      <h1>First page gate</h1>
+      <p>
+        Click through to check whether you are already a member.
+        If not, you are bounced to the login / subscription form
+        (name · email · password). After a clean login you reach the main surface.
+      </p>
+      <a id="cta-enter" class="btn" href="login.html" style="max-width:280px;margin:0 auto;display:inline-flex;">
+        Continue
+      </a>
+    </section>
+
+    <p class="footer-note">
+      Demo gate · client session · protect layer active
+    </p>
+  </main>
+
+  <script src="js/protect.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    // light visual for gate status
+    document.addEventListener("DOMContentLoaded", function () {
+      var s = window.ProtectAPI && ProtectAPI.getSession();
+      var dot = document.getElementById("gate-dot");
+      if (dot) {
+        if (s) { dot.classList.add("live"); }
+        else { dot.classList.add("warn"); }
+      }
+    });
+  </script>
+</body>
+</html>
